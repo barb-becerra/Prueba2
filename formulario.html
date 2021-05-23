@@ -105,61 +105,61 @@
       $("#mensaje").hide();
       $("#formulario").submit(function () {
         var error = "";
-        if ($("#nombre").val().length == 0) {
+        if ($("#nombre").val().trim().length == 0) {
           error += "Debe Ingresar un nombre</br>"
+          $("#nombre").removeClass("colorearValido");
           $("#nombre").addClass("colorearError");
         } else {
-          if ($("#nombre").val().length > 0) {
-            $("#nombre").addClass("colorearValido");
-          }
+          $("#nombre").removeClass("colorearError");
+          $("#nombre").addClass("colorearValido");
         }
-        if ($("#mail").val().length == 0) {
+        if ($("#mail").val().trim().length == 0) {
           error += "Debe Ingresar un correo</br>"
+          $("#mail").removeClass("colorearValido");
           $("#mail").addClass("colorearError");
         } else {
-          if ($("#mail").val().length > 0) {
-            $("#mail").addClass("colorearValido");
-          }
+          $("#mail").removeClass("colorearError");
+          $("#mail").addClass("colorearValido");
         }
-        if ($("#rut").val().length == 0) {
+        if ($("#rut").val().trim().length == 0) {
           error += "Debe Ingresar un RUT</br>"
+          $("#rut").removeClass("colorearValido");
           $("#rut").addClass("colorearError");
         } else {
-          if ($("#rut").val().length > 0) {
-            $("#rut").addClass("colorearValido");
-          }
+          $("#rut").removeClass("colorearError");
+          $("#rut").addClass("colorearValido");
         }
-        if ($("#dv").val().length == 0) {
+        if ($("#dv").val().trim().length == 0) {
           error += "Debe Ingresar un Digito Verificador</br>"
+          $("#dv").removeClass("colorearValido");
           $("#dv").addClass("colorearError");
         } else {
-          if ($("#dv").val().length > 0) {
-            $("#dv").addClass("colorearValido");
-          }
+          $("#dv").removeClass("colorearError");
+          $("#dv").addClass("colorearValido");
         }
-        if ($("#pass").val().length == 0) {
+        if ($("#pass").val().trim().length == 0) {
           error += "Debe Ingresar una Contraseña</br>"
+          $("#pass").removeClass("colorearValido");
           $("#pass").addClass("colorearError");
         } else {
-          if ($("#pass").val().length > 0) {
+            $("#pass").removeClass("colorearError");
             $("#pass").addClass("colorearValido");
-          }
         }
-        if ($("#rpass").val().length == 0) {
+        if ($("#rpass").val().trim().length == 0) {
           error += "Debe Ingresar nuevamente la contraseña</br>"
+          $("#rpass").removeClass("colorearValido");
           $("#rpass").addClass("colorearError");
         } else {
-          if ($("#rpass").val().length > 0) {
+            $("#rpass").removeClass("colorearError");
             $("#rpass").addClass("colorearValido");
-          }
         }
-        if ($("#comentario").val().length == 0) {
+        if ($("#comentario").val().trim().length == 0) {
           error += "Debe Ingresar un Comentario</br>"
+          $("#comentario").removeClass("colorearValido");
           $("#comentario").addClass("colorearError");
         } else {
-          if ($("#comentario").val().length > 0) {
+            $("#comentario").removeClass("colorearError");
             $("#comentario").addClass("colorearValido");
-          }
         }
         if (error != "") {
           $("#mensaje").html(error);

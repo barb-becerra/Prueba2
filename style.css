@@ -3,3 +3,9 @@
     border-style: solid;
     border-color: red;
 }
+
+.colorearValido{
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(4, 224, 4);
+}

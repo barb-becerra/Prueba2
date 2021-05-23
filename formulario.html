@@ -1,42 +1,73 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-danger">
-      <div class="container-fluid justify-content-center">
-        <a class="nav-link active text-light" aria-current="page" href="index.html">INICIO</a>
-        <a class="nav-link active text-light" aria-current="page" href="contenidos.html">CATEGORIAS</a>
-        <a class="nav-link active text-light" aria-current="page" href="formulario.html">FORMULARIO</a>
+  <title>MAIN DEPORTES</title>
+</head>
+
+<body background="./images/background.jpg">
+  <!-- BARRA NAVEGACION-->
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+      <img src="images/logo1.png" width="40" height="40">
+      <a class="navbar-brand" href="index.html"> MAIN DEPORTES</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="formulario.html">Registro</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Contenidos
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="deportes.html">Deportes</a></li>
+              <li><a class="dropdown-item" href="liga.html">Liga España</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </nav>
-   
-    <div class="container p-5 vh-75 w-50 align-items-center justify-content-center">
-      <div class="container border rounded p-3 pb-5 pt-1">
-        <h1 class="text-center mt-5">FORMULARIO</h1>
-        <div class="alert alert-danger mt-3" id="mensaje"></div>
-        <form action="resultado.html" method="POST" id="formulario">
-          <div class="form-group mt-5">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" name="nombre" id="nombre" placeholder="Ingrese su Nombre" class="form-control">
-          </div>
-          <div class="form-group mt-3">
-            <label for="mail" class="form-label">Mail</label>
-            <input type="text" name="mail" id="mail" placeholder="Ingrese su Correo" class="form-control">
-          </div>
-          <div class="mt-3">
-            <label for="rut" class="form-label ms-5">RUT</label>
-            <div class="form-group d-flex">
+  </div>
+
+  <!-- TITULO PAGINA-->
+  <div class="container mt-5 text-center">
+    <img src="images/logo1.png" width="100" height="100">
+    <h4>MAIN DEPORTES</h3>
+      <h6>Fanaticos de deporte siempre y por siempre.</h6>
+  </div>
+
+
+  <div class="container p-5 vh-75 w-50 align-items-center justify-content-center">
+    <div class="container border rounded p-3 pb-5 pt-1">
+      <h1 class="text-center mt-5">FORMULARIO</h1>
+      <div class="alert alert-danger mt-3" id="mensaje"></div>
+      <form action="resultado.html" method="POST" id="formulario">
+        <div class="form-group mt-5">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" name="nombre" id="nombre" placeholder="Ingrese su Nombre" class="form-control">
+        </div>
+        <div class="form-group mt-3">
+          <label for="mail" class="form-label">Mail</label>
+          <input type="text" name="mail" id="mail" placeholder="Ingrese su Correo" class="form-control">
+        </div>
+        <div class="mt-3">
+          <label for="rut" class="form-label ms-5">RUT</label>
+          <div class="form-group d-flex">
             <input type="number" name="rut" id="rut" placeholder="Ingrese su RUT" class="form-control w-25 ms-5 me-5">
             <input type="text" name="dv" id="dv" placeholder="DV" class="form-control w-25">
           </div>
@@ -46,7 +77,8 @@
           </div>
           <div class="form-group mt-3">
             <label for="rcontraseña" class="form-label">REPETIR CONTRASEÑA</label>
-            <input type="password" name="rpass" id="rpass" placeholder="Ingrese nuevamente su Contraseña" class="form-control">
+            <input type="password" name="rpass" id="rpass" placeholder="Ingrese nuevamente su Contraseña"
+              class="form-control">
           </div>
           <div class="mt-4">
             <label for="comentarios" class="form-label">COMENTARIOS:</label>
@@ -57,56 +89,97 @@
           <div class="text-center mt-5">
             <button class="btn btn-success">ENVIAR DATOS</button>
           </div>
-        </form>
-      </div>
+      </form>
     </div>
+  </div>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  
-    <script>
-      $(document).ready(function(){
-        $("#mensaje").hide();
-        $("#formulario").submit(function(){
-          var error="";
-          if($("#nombre").val().length == 0){
-            error += "Debe Ingresar un nombre</br>"
-            $("#nombre").addClass("colorearError");
-          }
-          if($("#mail").val().length == 0){
-            error += "Debe Ingresar un correo</br>"
-            $("#mail").addClass("colorearError");
-          }
-          if($("#rut").val().length == 0){
-            error += "Debe Ingresar un RUT</br>"
-            $("#rut").addClass("colorearError");
-          }
-          if($("#dv").val().length == 0){
-            error += "Debe Ingresar un Digito Verificador</br>"
-            $("#dv").addClass("colorearError");
-          }
-          if($("#pass").val().length == 0){
-            error += "Debe Ingresar una Contraseña</br>"
-            $("#pass").addClass("colorearError");
-          }
-          if($("#rpass").val().length == 0){
-            error += "Debe Ingresar nuevamente la contraseña</br>"
-            $("#rpass").addClass("colorearError");
-          }
-          if($("#comentario").val().length == 0){
-            error += "Debe Ingresar un Comentario</br>"
-            $("#comentario").addClass("colorearError");
-          }
-          if (error != ""){
-            $("#mensaje").html(error);
-            $("#mensaje").show();
-            event.preventDefault();
-          }
-        });
-      });    
-    </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  </body>
+  <script>
+    $(document).ready(function () {
+      $("#mensaje").hide();
+      $("#formulario").submit(function () {
+        var error = "";
+        if ($("#nombre").val().length == 0) {
+          error += "Debe Ingresar un nombre</br>"
+          $("#nombre").addClass("colorearError");
+        } else {
+          if ($("#nombre").val().length > 0) {
+            $("#nombre").addClass("colorearValido");
+          }
+        }
+        if ($("#mail").val().length == 0) {
+          error += "Debe Ingresar un correo</br>"
+          $("#mail").addClass("colorearError");
+        } else {
+          if ($("#mail").val().length > 0) {
+            $("#mail").addClass("colorearValido");
+          }
+        }
+        if ($("#rut").val().length == 0) {
+          error += "Debe Ingresar un RUT</br>"
+          $("#rut").addClass("colorearError");
+        } else {
+          if ($("#rut").val().length > 0) {
+            $("#rut").addClass("colorearValido");
+          }
+        }
+        if ($("#dv").val().length == 0) {
+          error += "Debe Ingresar un Digito Verificador</br>"
+          $("#dv").addClass("colorearError");
+        } else {
+          if ($("#dv").val().length > 0) {
+            $("#dv").addClass("colorearValido");
+          }
+        }
+        if ($("#pass").val().length == 0) {
+          error += "Debe Ingresar una Contraseña</br>"
+          $("#pass").addClass("colorearError");
+        } else {
+          if ($("#pass").val().length > 0) {
+            $("#pass").addClass("colorearValido");
+          }
+        }
+        if ($("#rpass").val().length == 0) {
+          error += "Debe Ingresar nuevamente la contraseña</br>"
+          $("#rpass").addClass("colorearError");
+        } else {
+          if ($("#rpass").val().length > 0) {
+            $("#rpass").addClass("colorearValido");
+          }
+        }
+        if ($("#comentario").val().length == 0) {
+          error += "Debe Ingresar un Comentario</br>"
+          $("#comentario").addClass("colorearError");
+        } else {
+          if ($("#comentario").val().length > 0) {
+            $("#comentario").addClass("colorearValido");
+          }
+        }
+        if (error != "") {
+          $("#mensaje").html(error);
+          $("#mensaje").show();
+          event.preventDefault();
+        }
+      });
+    });
+  </script>
+  </div>
+  <!-- PIE DE PAGINA-->
+  <footer class="bg-light text-center text bg-dark">
+    <div class="text-center p-3 mt-4 footer text-white">
+      <b>MAIN DEPORTES</b>
+      <br>Fanaticos de deporte siempre y por siempre.<br>
+      <b>Numero de contacto: +56945687238</b>
+    </div>
+  </footer>
+
+
+</body>
+
 </html>

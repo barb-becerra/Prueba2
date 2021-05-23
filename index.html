@@ -1,32 +1,113 @@
 <!doctype html>
 <html lang="es">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-    <title>DEPORTES!</title>
-  </head>
-  <body>
-    
+    <title>MAIN DEPORTES</title>
+</head>
+
+<body background="./images/background.jpg">
     <!-- BARRA NAVEGACION-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-danger">
-        <div class="container-fluid justify-content-center">
-            <a class="nav-link active text-light" aria-current="page" href="index.html">INICIO</a>
-            <a class="nav-link active text-light" aria-current="page" href="contenidos.html">CATEGORIAS</a>
-            <a class="nav-link active text-light" aria-current="page" href="formulario.html">FORMULARIO</a>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+            <img src="images/logo1.png" width="40" height="40">
+            <a class="navbar-brand" href="index.html"> MAIN DEPORTES</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="formulario.html">Registro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contenidos.html">Contenidos</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- TITULO PAGINA-->
+        <div class="container mt-5 text-center">
+            <img src="images/logo1.png" width="100" height="100">
+            <h4>MAIN DEPORTES</h3>
+                <h6>Fanaticos de deporte siempre y por siempre.</h6>
         </div>
-    </nav>
 
     <!-- CARRUSEL-->
-    
+    <div class="container mt-3">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/carrusel1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/carrusel2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/carrusel3.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
 
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <!-- CONTENIDOS-->
+    <div class="container mt-5 text-center">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="images/sport.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Deportes</h5>
+                        <p class="card-text">Informacion de tablas de todos los deportes.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="images/ligaespaña.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Liga España</h5>
+                        <p class="card-text">Informacion de tablas en la Liga España!.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- PIE DE PAGINA-->
+    <footer class="bg-light text-center text bg-dark">
+        <div class="text-center p-3 mt-4 footer text-white">
+          <b>MAIN DEPORTES</b>
+          <br>Fanaticos de deporte siempre y por siempre.<br>
+          <b>Numero de contacto: +56945687238</b>
+        </div>
+      </footer>
 
-  </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+</body>
+
 </html>

@@ -67,8 +67,9 @@
         </div>
         <div class="mt-3 justify-content-center">
           <label for="rut" class="form-label ms-5">RUT</label>
-          <div class="form-group">
-            <input type="number" name="rut" id="rut" placeholder="Ingrese su RUT" class="form-control">
+          <div class="form-group d-flex"> 
+            <input type="number" name="rut" id="rut" placeholder="Ingrese su RUT" class="form-control me-5">
+            <input type="text" name="dv" id="dv" placeholder="DV" maxlength="10" class="form-control ms-5">
           </div>
         </div>
         <div class="form-group mt-3">
@@ -118,12 +119,34 @@
         } else {
           $("#mail").removeClass("colorearError");
         }
+        
+        
+        
+        
         if ($("#rut").val().trim().length == 0) {
           error += "Debe Ingresar un RUT</br>"
           $("#rut").addClass("colorearError");
         } else {
-          $("#rut").removeClass("colorearError");
+          if ($("#rut").val().trim().length < 7){
+            error += "El RUT debe tener minimo 7 digitos</br>"
+            $("#rut").addClass("colorearError");
+          }else{
+            var invertido = invertirRUT($("#rut").val());
+            console.log(invertido)
+            $("#rut").removeClass("colorearError");
+          }
         }
+        if ($("#dv").val().trim().length == 0) {
+          error += "Debe Ingresar un Digito Verificador</br>"
+          $("#dv").addClass("colorearError");
+        } else {
+          if (validarRUT(invertido, $("#dv").val().toUpperCase()) == true){
+            $("#dv").removeClass("colorearError");
+          } else{
+            error += "El RUT o DV son incorrectos</br>"
+            $("#rut").addClass("colorearError");
+          }
+        }       
         if ($("#pass").val().trim().length == 0) {
           error += "Debe Ingresar una Contraseña</br>"
           $("#pass").addClass("colorearError");
@@ -142,6 +165,63 @@
         } else {
           $("#comentario").removeClass("colorearError");
         }
+
+        function invertirRUT(rut){
+           var invertido = 0;
+           var resto = rut;
+           do{
+             invertido = invertido * 10 + (resto % 10);
+             resto = Math.floor (resto/10);
+           } while (resto>0)
+           return invertido;
+          
+          }
+        
+        function validarRUT (invertido, dv){
+          var a = invertido.toString();
+          var b = a.length;
+          var multiplo = 2;
+          var suma = 0;
+          var aux = 0;
+          var aux2 = 0;
+          var aux3 = 0;
+          var resto = 0;
+          var final = 0;
+
+          if (dv == 'K'){
+            dv = 10;
+          }else{
+            if (dv == 0){
+              dv = 11;
+            }else{
+              dv == dv;
+            }
+          }
+
+          for (i=1; i<=b; i++){
+            aux = multiplo * a.charAt(i-1);
+            suma += aux;
+            if (multiplo < 7){
+              multiplo += 1;
+            } else{
+              multiplo = 2;
+            }
+          }
+
+          resto = suma / 11;
+          resto = resto.toString().charAt(0);
+          aux2 = resto * 11;
+
+          aux3 = suma - aux2;
+          final = 11 - aux3;
+
+          if (final == dv){
+            return true;
+          } else{
+            return false;
+          }
+        }
+        
         if (error != "") {
           $("#mensaje").html(error);
           $("#mensaje").show();
@@ -149,6 +229,8 @@
         }
       });
     });
+
+
   </script>
   </div>
   <!-- PIE DE PAGINA-->

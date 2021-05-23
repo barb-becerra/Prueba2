@@ -67,9 +67,8 @@
         </div>
         <div class="mt-3 justify-content-center">
           <label for="rut" class="form-label ms-5">RUT</label>
-          <div class="form-group d-flex">
-            <input type="number" name="rut" id="rut" placeholder="Ingrese su RUT" class="form-control w-25 ms-5 me-5">
-            <input type="text" name="dv" id="dv" placeholder="DV" class="form-control w-25">
+          <div class="form-group">
+            <input type="number" name="rut" id="rut" placeholder="Ingrese su RUT" class="form-control">
           </div>
         </div>
         <div class="form-group mt-3">
@@ -78,7 +77,8 @@
         </div>
         <div class="form-group mt-3">
           <label for="rcontraseña" class="form-label">REPETIR CONTRASEÑA</label>
-          <input type="password" name="rpass" id="rpass" placeholder="Ingrese nuevamente su Contraseña" class="form-control">
+          <input type="password" name="rpass" id="rpass" placeholder="Ingrese nuevamente su Contraseña"
+            class="form-control">
         </div>
         <div class="mt-4">
           <label for="comentarios" class="form-label">COMENTARIOS:</label>
@@ -105,61 +105,42 @@
       $("#mensaje").hide();
       $("#formulario").submit(function () {
         var error = "";
+        var er ="";
         if ($("#nombre").val().trim().length == 0) {
           error += "Debe Ingresar un nombre</br>"
-          $("#nombre").removeClass("colorearValido");
           $("#nombre").addClass("colorearError");
         } else {
           $("#nombre").removeClass("colorearError");
-          $("#nombre").addClass("colorearValido");
         }
         if ($("#mail").val().trim().length == 0) {
           error += "Debe Ingresar un correo</br>"
-          $("#mail").removeClass("colorearValido");
           $("#mail").addClass("colorearError");
         } else {
           $("#mail").removeClass("colorearError");
-          $("#mail").addClass("colorearValido");
         }
         if ($("#rut").val().trim().length == 0) {
           error += "Debe Ingresar un RUT</br>"
-          $("#rut").removeClass("colorearValido");
           $("#rut").addClass("colorearError");
         } else {
           $("#rut").removeClass("colorearError");
-          $("#rut").addClass("colorearValido");
-        }
-        if ($("#dv").val().trim().length == 0) {
-          error += "Debe Ingresar un Digito Verificador</br>"
-          $("#dv").removeClass("colorearValido");
-          $("#dv").addClass("colorearError");
-        } else {
-          $("#dv").removeClass("colorearError");
-          $("#dv").addClass("colorearValido");
         }
         if ($("#pass").val().trim().length == 0) {
           error += "Debe Ingresar una Contraseña</br>"
-          $("#pass").removeClass("colorearValido");
           $("#pass").addClass("colorearError");
         } else {
           $("#pass").removeClass("colorearError");
-          $("#pass").addClass("colorearValido");
         }
         if ($("#rpass").val().trim().length == 0) {
           error += "Debe Ingresar nuevamente la contraseña</br>"
-          $("#rpass").removeClass("colorearValido");
           $("#rpass").addClass("colorearError");
         } else {
           $("#rpass").removeClass("colorearError");
-          $("#rpass").addClass("colorearValido");
         }
         if ($("#comentario").val().trim().length == 0) {
           error += "Debe Ingresar un Comentario</br>"
-          $("#comentario").removeClass("colorearValido");
           $("#comentario").addClass("colorearError");
         } else {
           $("#comentario").removeClass("colorearError");
-          $("#comentario").addClass("colorearValido");
         }
         if (error != "") {
           $("#mensaje").html(error);

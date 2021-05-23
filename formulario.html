@@ -142,24 +142,24 @@
           $("#pass").removeClass("colorearValido");
           $("#pass").addClass("colorearError");
         } else {
-            $("#pass").removeClass("colorearError");
-            $("#pass").addClass("colorearValido");
+          $("#pass").removeClass("colorearError");
+          $("#pass").addClass("colorearValido");
         }
         if ($("#rpass").val().trim().length == 0) {
           error += "Debe Ingresar nuevamente la contraseña</br>"
           $("#rpass").removeClass("colorearValido");
           $("#rpass").addClass("colorearError");
         } else {
-            $("#rpass").removeClass("colorearError");
-            $("#rpass").addClass("colorearValido");
+          $("#rpass").removeClass("colorearError");
+          $("#rpass").addClass("colorearValido");
         }
         if ($("#comentario").val().trim().length == 0) {
           error += "Debe Ingresar un Comentario</br>"
           $("#comentario").removeClass("colorearValido");
           $("#comentario").addClass("colorearError");
         } else {
-            $("#comentario").removeClass("colorearError");
-            $("#comentario").addClass("colorearValido");
+          $("#comentario").removeClass("colorearError");
+          $("#comentario").addClass("colorearValido");
         }
         if (error != "") {
           $("#mensaje").html(error);

@@ -69,7 +69,7 @@
           <label for="rut" class="form-label ms-5">RUT</label>
           <div class="form-group d-flex"> 
             <input type="number" name="rut" id="rut" placeholder="Ingrese su RUT" class="form-control me-5">
-            <input type="text" name="dv" id="dv" placeholder="DV" maxlength="10" class="form-control ms-5">
+            <input type="text" name="dv" id="dv" placeholder="DV" class="form-control ms-5">
           </div>
         </div>
         <div class="form-group mt-3">
@@ -139,14 +139,22 @@
         if ($("#dv").val().trim().length == 0) {
           error += "Debe Ingresar un Digito Verificador</br>"
           $("#dv").addClass("colorearError");
-        } else {
-          if (validarRUT(invertido, $("#dv").val().toUpperCase()) == true){
-            $("#dv").removeClass("colorearError");
-          } else{
-            error += "El RUT o DV son incorrectos</br>"
-            $("#rut").addClass("colorearError");
+        }else { 
+          if ($("#dv").val() == '0' || $("#dv").val() == '1' || $("#dv").val() == '2' || $("#dv").val() == '3' || $("#dv").val() == '4' || $("#dv").val() == '5' || $("#dv").val() == '6' || $("#dv").val() == '7' || $("#dv").val() == '8' || $("#dv").val() == '9' || $("#dv").val().toUpperCase() == 'K'){
+            if (validarRUT(invertido, $("#dv").val().toUpperCase()) == true){
+              $("#rut").removeClass("colorearError");
+              $("#dv").removeClass("colorearError");
+            } else{
+              error += "El RUT o DV son incorrectos</br>"
+              $("#rut").addClass("colorearError");
+              $("#dv").addClass("colorearError");
+            }
+            //
+          }else{   
+            error += "El Digito Verificador debe ser de 0-9 o K</br>"
           }
-        }       
+        }        
+
         if ($("#pass").val().trim().length == 0) {
           error += "Debe Ingresar una Contraseña</br>"
           $("#pass").addClass("colorearError");

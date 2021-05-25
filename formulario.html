@@ -56,7 +56,7 @@
     <div class="container border rounded p-3 pb-5 pt-1">
       <h1 class="text-center mt-5">FORMULARIO</h1>
       <div class="alert alert-danger mt-3" id="mensaje"></div>
-      <form action="resultado.html" method="get" id="formulario">
+      <form action="resultado.html" method="POST" id="formulario">
         <div class="form-group mt-5">
           <label for="nombre" class="form-label">Nombre</label>
           <input type="text" name="nombre" id="nombre" placeholder="Ingrese su Nombre" class="form-control">
@@ -170,6 +170,8 @@
 
         if ($("#pass").val() != $("#rpass").val()){
           error += "Las contraseñas ingresadas no coinciden</br>"
+          $("#pass").addClass("colorearError");
+          $("#rpass").addClass("colorearError");
         }
 
 
